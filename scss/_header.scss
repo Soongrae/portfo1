@@ -1,0 +1,100 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    z-index: 10;
+    color: white;
+}
+
+.hd-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.pc-navmenu {
+    width: 45%;
+    @include tab {
+        display: none;
+    }
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.2rem;
+        // li:not(:first-child) {
+        //     margin-left: 55px;
+        // }
+    }
+}
+
+// .ham {
+//     display: none;
+//     @include tab {
+//         width: 25px;
+//         height: 14px;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: space-between;
+//         span {
+//             display: inline-block;
+//             width: 100%;
+//             height: 1px;
+//             background-color: #fff;
+//         }
+//     }
+// }
+
+
+#ham {
+    display: none;
+    @include tab {
+        width: 25px;
+        height: 14px;
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+        position: relative;
+        cursor: pointer;
+    }
+}
+
+.hamburg {
+    display: none;
+    @include tab {
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        background-color: white;
+        position: absolute;
+        transition: all 1s;
+    }
+}
+
+.ham1 {
+    top: 0;
+}
+
+.ham2 {
+    top: 50%;
+}
+
+.ham3 {
+    top: 100%;
+}
+
+.clicked .ham1 {
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+.clicked .ham2 {
+    width: 0;
+}
+
+.clicked .ham3 {
+    top: 50%;
+    transform: rotate(-45deg);
+}
